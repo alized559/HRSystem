@@ -1,0 +1,12 @@
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\bin\Debug\HRSystem.exe.config
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\bin\Debug\HRSystem.exe
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\bin\Debug\HRSystem.pdb
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.csproj.AssemblyReference.cache
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.Properties.Resources.resources
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.csproj.GenerateResource.cache
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.csproj.CoreCompileInputs.cache
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.exe
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.pdb
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.LogIn.resources
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.SignUp.resources
