@@ -17,7 +17,7 @@ namespace HRSystem
             InitializeComponent();
         }
 
-        private void AuthTitle_Click(object sender, EventArgs e)
+        private void loginLink_Click(object sender, EventArgs e)
         {
 
         }
