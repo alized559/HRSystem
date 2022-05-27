@@ -20,6 +20,7 @@ namespace HRSystem
 
         private void LogIn_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             passwordShow.ImageLocation = @"../../Images/eyeShow.jpg";
         }
 
@@ -51,7 +52,10 @@ namespace HRSystem
                     var reader = cmd.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        //success
+                        this.Hide();
+                        var hrSystem = new HRSystemForm();
+                        hrSystem.Closed += (s, args) => this.Close();
+                        hrSystem.Show();
                     }
                     else
                     {
@@ -86,6 +90,14 @@ namespace HRSystem
                 passwordShow.ImageLocation = @"../../Images/eyeShow.jpg";
                 passwordTextbox.UseSystemPasswordChar = true;
             }
+        }
+
+        private void link_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var signup = new SignUp();
+            signup.Closed += (s, args) => this.Close();
+            signup.Show();
         }
     }
 }

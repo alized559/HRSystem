@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HRSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRSystemForm.Designer.cs">
+      <DependentUpon>HRSystemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HRSystemForm.resx">
+      <DependentUpon>HRSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +122,7 @@
   <ItemGroup>
     <Content Include="Images\eyeHide.jpg" />
     <Content Include="Images\eyeShow.jpg" />
+    <Content Include="Images\hr_home_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

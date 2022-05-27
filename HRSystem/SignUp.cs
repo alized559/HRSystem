@@ -20,6 +20,7 @@ namespace HRSystem
 
         private void SignUp_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             passwordShow.ImageLocation = @"../../Images/eyeShow.jpg";
             password2Show.ImageLocation = @"../../Images/eyeShow.jpg";
         }
@@ -64,9 +65,27 @@ namespace HRSystem
                     }
                     else
                     {
-                        //success
+                        reader.Close();
+                        string sql = "INSERT INTO admin (email, fullname, password) VALUES ('" + emailTextbox.Text + "', '"
+                            + fullnameTextbox.Text + "', '" + passwordTextbox.Text + "')";
+                        SqlCommand cmd1 = new SqlCommand(sql, connection);
+
+                        try
+                        {
+                            cmd1.ExecuteNonQuery();
+                        } catch (Exception error)
+                        {
+                            MessageBox.Show(error.Message);
+                        } finally
+                        {
+                            cmd1.Dispose();
+                            this.Hide();
+                            var hrSystem = new HRSystemForm();
+                            hrSystem.Closed += (s, args) => this.Close();
+                            hrSystem.Show();
+                        }
                     }
-                    reader.Close();
+                    
                 }
                 catch (Exception error)
                 {
@@ -108,9 +127,12 @@ namespace HRSystem
             }
         }
 
-        private void loginLink_Click(object sender, EventArgs e)
+        private void link_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var login = new LogIn();
+            login.Closed += (s, args) => this.Close();
+            login.Show();
         }
 
         private void clearAllFields()

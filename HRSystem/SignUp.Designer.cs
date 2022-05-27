@@ -34,7 +34,7 @@
             this.errorText = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passwordShow = new System.Windows.Forms.PictureBox();
-            this.loginLink = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.signupBtn = new System.Windows.Forms.Button();
             this.password2Textbox = new System.Windows.Forms.TextBox();
             this.cPassLabel = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.fullnameLabel = new System.Windows.Forms.Label();
             this.AuthTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.password2Show)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordShow)).BeginInit();
@@ -103,17 +104,16 @@
             this.passwordShow.TabStop = false;
             this.passwordShow.Click += new System.EventHandler(this.passwordShow_Click);
             // 
-            // loginLink
+            // label
             // 
-            this.loginLink.AutoSize = true;
-            this.loginLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.loginLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.loginLink.Location = new System.Drawing.Point(65, 529);
-            this.loginLink.Name = "loginLink";
-            this.loginLink.Size = new System.Drawing.Size(201, 20);
-            this.loginLink.TabIndex = 41;
-            this.loginLink.Text = "Are you a member? Login";
-            this.loginLink.Click += new System.EventHandler(this.loginLink_Click);
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label.Location = new System.Drawing.Point(65, 529);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(155, 20);
+            this.label.TabIndex = 41;
+            this.label.Text = "Are you a member?";
             // 
             // signupBtn
             // 
@@ -212,18 +212,32 @@
             this.AuthTitle.Text = "Hello, Signup";
             this.AuthTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(237, 529);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Login";
+            this.label1.Click += new System.EventHandler(this.link_Click);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(502, 571);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.password2Show);
             this.Controls.Add(this.fullnameTextbox);
             this.Controls.Add(this.errorText);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordShow);
-            this.Controls.Add(this.loginLink);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.signupBtn);
             this.Controls.Add(this.password2Textbox);
             this.Controls.Add(this.cPassLabel);
@@ -251,7 +265,7 @@
         private System.Windows.Forms.Label errorText;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox passwordShow;
-        private System.Windows.Forms.Label loginLink;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.Button signupBtn;
         private System.Windows.Forms.TextBox password2Textbox;
         private System.Windows.Forms.Label cPassLabel;
@@ -261,5 +275,6 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label fullnameLabel;
         private System.Windows.Forms.Label AuthTitle;
+        private System.Windows.Forms.Label label1;
     }
 }
