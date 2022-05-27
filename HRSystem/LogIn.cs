@@ -39,7 +39,6 @@ namespace HRSystem
             }
             else
             {
-                // check if email exists else success
                 string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(conn);
                 string query = "SELECT * FROM admin WHERE email = '" + emailTextbox.Text + "' AND password = '" + 
@@ -50,8 +49,11 @@ namespace HRSystem
                 {
                     connection.Open();
                     var reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
+                    if (reader.Read())
                     {
+                        // add username column to admin table in microsoft sql studio
+                        // then get the username instead of fullname
+                        Program.currentHRName = reader["fullname"].ToString();
                         this.Hide();
                         var hrSystem = new HRSystemForm();
                         hrSystem.Closed += (s, args) => this.Close();

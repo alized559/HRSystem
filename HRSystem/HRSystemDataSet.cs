@@ -10,9 +10,12 @@
     }
 }
 
-namespace HRSystem.HRSystemDataSetTableAdapters {
-    
-    
+namespace HRSystem.HRSystemDataSetTableAdapters
+{
+    partial class employeeTableAdapter
+    {
+    }
+
     public partial class adminTableAdapter {
     }
 }

@@ -9,6 +9,7 @@ namespace HRSystem
 {
     internal static class Program
     {
+        public static string currentHRName = "";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +18,7 @@ namespace HRSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignUp());
+            Application.Run(new LogIn());
         }
     }
 }

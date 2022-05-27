@@ -11,3 +11,4 @@ C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.pdb
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.LogIn.resources
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.SignUp.resources
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.HRSystemForm.resources
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.AddEmployee.resources

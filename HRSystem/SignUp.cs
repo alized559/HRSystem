@@ -23,6 +23,9 @@ namespace HRSystem
             this.CenterToScreen();
             passwordShow.ImageLocation = @"../../Images/eyeShow.jpg";
             password2Show.ImageLocation = @"../../Images/eyeShow.jpg";
+
+            // we need a method that hide real password, for example: 123456 -> ahqwyjklsmabsvqjw
+            // and session for admin
         }
 
         private void signupBtn_Click(object sender, EventArgs e)
@@ -47,7 +50,6 @@ namespace HRSystem
             }
             else
             {
-                // check if email exists else success
                 string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(conn);
                 string query = "SELECT * FROM admin WHERE email = '" + emailTextbox.Text + "'";
