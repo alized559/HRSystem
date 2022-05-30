@@ -58,6 +58,13 @@
     <Compile Include="AddJob.Designer.cs">
       <DependentUpon>AddJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="Job.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Job.Designer.cs">
+      <DependentUpon>Job.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobModel.cs" />
     <Compile Include="Jobs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HRSystemForm.resx">
       <DependentUpon>HRSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Job.resx">
+      <DependentUpon>Job.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Jobs.resx">
       <DependentUpon>Jobs.cs</DependentUpon>

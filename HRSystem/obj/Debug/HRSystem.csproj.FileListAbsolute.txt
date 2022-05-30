@@ -14,3 +14,4 @@ C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.exe
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.pdb
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.AddJob.resources
 C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.Jobs.resources
+C:\Users\alize\VisualStudioProjects\HRSystem\HRSystem\obj\Debug\HRSystem.Job.resources
