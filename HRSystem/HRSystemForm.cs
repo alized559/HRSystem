@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HRSystem
@@ -19,10 +12,12 @@ namespace HRSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.jobTableAdapter.Fill(this.hRSystemDataSet.job);
             this.adminTableAdapter.Fill(this.hRSystemDataSet.admin);
             this.employeeTableAdapter.Fill(this.hRSystemDataSet.employee);
             this.CenterToScreen();
             adminNameLabel.Text = "Welcome " + Program.currentHRName;
+            
 
             // admin nav is invisible because I did it invisible in UI
             // locate it and put plus btn enabled attribute to false
@@ -48,17 +43,30 @@ namespace HRSystem
             if (tabControl.SelectedIndex == 0)
             {
                 adminNav.Visible = false;
+                jobNav.Visible = false;
                 employeeNav.Visible = true;
+            } else if (tabControl.SelectedIndex == 1)
+            {
+                employeeNav.Visible = false;
+                jobNav.Visible = false;
+                adminNav.Visible = true;
             } else
             {
                 employeeNav.Visible = false;
-                adminNav.Visible = true;
+                adminNav.Visible = false;
+                jobNav.Visible = true;
             }
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             // logout
+        }
+
+        private void bindingNavigatorAddNewItem1_Click(object sender, EventArgs e)
+        {
+            AddJob form = new AddJob();
+            form.Show();
         }
     }
 }

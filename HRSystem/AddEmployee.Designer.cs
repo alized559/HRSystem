@@ -78,7 +78,6 @@
             // 
             // usernameTextbox
             // 
-            this.usernameTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "username", true));
             this.usernameTextbox.Location = new System.Drawing.Point(68, 151);
             this.usernameTextbox.Name = "usernameTextbox";
             this.usernameTextbox.Size = new System.Drawing.Size(369, 22);
@@ -86,7 +85,6 @@
             // 
             // fullnameTextbox
             // 
-            this.fullnameTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "fullname", true));
             this.fullnameTextbox.Location = new System.Drawing.Point(68, 231);
             this.fullnameTextbox.Name = "fullnameTextbox";
             this.fullnameTextbox.Size = new System.Drawing.Size(369, 22);
@@ -104,7 +102,6 @@
             // 
             // emailTextbox
             // 
-            this.emailTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "email", true));
             this.emailTextbox.Location = new System.Drawing.Point(68, 305);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(369, 22);
@@ -122,7 +119,6 @@
             // 
             // genderTextbox
             // 
-            this.genderTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.employeeBindingSource, "gender", true));
             this.genderTextbox.Location = new System.Drawing.Point(68, 383);
             this.genderTextbox.Name = "genderTextbox";
             this.genderTextbox.Size = new System.Drawing.Size(369, 22);
@@ -140,7 +136,6 @@
             // 
             // ageTextbox
             // 
-            this.ageTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "age", true));
             this.ageTextbox.Location = new System.Drawing.Point(68, 460);
             this.ageTextbox.Name = "ageTextbox";
             this.ageTextbox.Size = new System.Drawing.Size(369, 22);
@@ -158,7 +153,6 @@
             // 
             // addressTextbox
             // 
-            this.addressTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.employeeBindingSource, "address", true));
             this.addressTextbox.Location = new System.Drawing.Point(68, 534);
             this.addressTextbox.Name = "addressTextbox";
             this.addressTextbox.Size = new System.Drawing.Size(369, 22);
@@ -176,7 +170,6 @@
             // 
             // numberTextbox
             // 
-            this.numberTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "phone_number", true));
             this.numberTextbox.Location = new System.Drawing.Point(68, 607);
             this.numberTextbox.Name = "numberTextbox";
             this.numberTextbox.Size = new System.Drawing.Size(369, 22);
@@ -194,7 +187,6 @@
             // 
             // jobTextbox
             // 
-            this.jobTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "job_position", true));
             this.jobTextbox.Location = new System.Drawing.Point(68, 680);
             this.jobTextbox.Name = "jobTextbox";
             this.jobTextbox.Size = new System.Drawing.Size(369, 22);
@@ -212,7 +204,6 @@
             // 
             // companyTextbox
             // 
-            this.companyTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "company", true));
             this.companyTextbox.Location = new System.Drawing.Point(68, 751);
             this.companyTextbox.Name = "companyTextbox";
             this.companyTextbox.Size = new System.Drawing.Size(369, 22);

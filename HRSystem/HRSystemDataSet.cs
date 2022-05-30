@@ -12,6 +12,10 @@
 
 namespace HRSystem.HRSystemDataSetTableAdapters
 {
+    partial class jobTableAdapter
+    {
+    }
+
     partial class employeeTableAdapter
     {
     }
