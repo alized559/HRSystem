@@ -52,7 +52,7 @@ namespace HRSystem
             {
                 string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(conn);
-                string query = "SELECT * FROM admin WHERE email = '" + emailTextbox.Text + "'";
+                string query = "SELECT * FROM users WHERE email = '" + emailTextbox.Text + "'";
                 SqlCommand cmd = new SqlCommand(query, connection);
 
                 try
@@ -68,7 +68,7 @@ namespace HRSystem
                     else
                     {
                         reader.Close();
-                        string sql = "INSERT INTO admin (email, fullname, password) VALUES ('" + emailTextbox.Text + "', '"
+                        string sql = "INSERT INTO users (email, fullname, password) VALUES ('" + emailTextbox.Text + "', '"
                             + fullnameTextbox.Text + "', '" + passwordTextbox.Text + "')";
                         SqlCommand cmd1 = new SqlCommand(sql, connection);
 

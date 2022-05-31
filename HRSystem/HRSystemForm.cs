@@ -7,6 +7,7 @@ namespace HRSystem
     public partial class HRSystemForm : Form
     {
         JobModel[] jobs;
+        string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
         public HRSystemForm()
         {
             InitializeComponent();
@@ -14,12 +15,11 @@ namespace HRSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.adminTableAdapter.Fill(this.hRSystemDataSet.admin);
+            // TODO: This line of code loads data into the 'hRSystemDataSet.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.hRSystemDataSet.users);
             this.employeeTableAdapter.Fill(this.hRSystemDataSet.employee);
             this.CenterToScreen();
             adminNameLabel.Text = "Welcome " + Program.currentHRName;
-
-            string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(conn);
             string query = "SELECT COUNT(id) as count FROM job";
@@ -64,7 +64,10 @@ namespace HRSystem
                 }
                 foreach (JobModel job in jobs)
                 {
-                    jobList.Items.Add(job);
+                    if (job != null)
+                    {
+                        jobList.Items.Add(job);
+                    }
                 }
                 reader.Close();
             }
@@ -77,11 +80,6 @@ namespace HRSystem
                 cmd.Dispose();
                 connection1.Close();
             }
-
-            // admin nav is invisible because I did it invisible in UI
-            // locate it and put plus btn enabled attribute to false
-            // because I don't think we need to do it, there is signup
-            // but you can do it, and you have add employee UI
         }
 
         public void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -96,7 +94,6 @@ namespace HRSystem
             if (tabControl.SelectedIndex == 0)
             {
                 errorLabel.Visible = false;
-                adminNav.Visible = false;
                 viewBtn.Visible = false;
                 deleteBtn.Visible = false;
                 employeeNav.Visible = true;
@@ -106,19 +103,30 @@ namespace HRSystem
                 employeeNav.Visible = false;
                 viewBtn.Visible = false;
                 deleteBtn.Visible = false;
-                adminNav.Visible = true;
             } else
             {
                 employeeNav.Visible = false;
-                adminNav.Visible = false;
-                viewBtn.Visible = true;
-                deleteBtn.Visible = true;
+
+                if (jobs.Length == 0)
+                {
+                    viewBtn.Visible = false;
+                    deleteBtn.Visible = false;
+                    errorLabel.Text = "No Jobs Available";
+                    errorLabel.Visible = true;
+                } else
+                {
+                    viewBtn.Visible = true;
+                    deleteBtn.Visible = true;
+                }
             }
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            // logout
+            this.Hide();
+            var login = new LogIn();
+            login.Closed += (s, args) => this.Close();
+            login.Show();
         }
 
         private void bindingNavigatorAddNewItem1_Click(object sender, EventArgs e)
@@ -145,6 +153,45 @@ namespace HRSystem
                 Program.selectedJobID = jobs[jobList.SelectedIndex].id;
                 Job jobForm = new Job();
                 jobForm.Show();
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (jobList.SelectedIndex == -1)
+            {
+                errorLabel.Text = "Please Select Job Post To Delete";
+                errorLabel.Visible = true;
+            } else
+            {
+                SqlConnection connection = new SqlConnection(conn);
+                string query = "DELETE FROM job WHERE id = " + jobs[jobList.SelectedIndex].id;
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    jobs[jobList.SelectedIndex] = null;
+                    jobList.Items.Clear();
+
+                    foreach (JobModel job in jobs)
+                    {
+                        if (job != null)
+                        {
+                            jobList.Items.Add(job);
+                        }
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    connection.Close();
+                }
             }
         }
     }

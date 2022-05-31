@@ -41,7 +41,7 @@ namespace HRSystem
             {
                 string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(conn);
-                string query = "SELECT * FROM admin WHERE email = '" + emailTextbox.Text + "' AND password = '" + 
+                string query = "SELECT * FROM users WHERE email = '" + emailTextbox.Text + "' AND password = '" + 
                     passwordTextbox.Text + "'";
                 SqlCommand cmd = new SqlCommand(query, connection);
 

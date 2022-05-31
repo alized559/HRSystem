@@ -21,11 +21,16 @@ namespace HRSystem
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            // logout
+            this.Hide();
+            var login = new LogIn();
+            login.Closed += (s, args) => this.Close();
+            login.Show();
         }
 
         private void Jobs_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
+
             string conn = "Data Source=DESKTOP-KING\\SQLEXPRESS;Initial Catalog=HRSystem;Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(conn);
